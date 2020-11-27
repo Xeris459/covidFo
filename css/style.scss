@@ -1,0 +1,404 @@
+@import "var";
+@import "rules";
+@import "base";
+
+// -------------------------------------------- Start Line
+body {
+  background: $pure;
+  position: relative;
+}
+.menu-bg {
+  @include min(841px) {
+    display: none;
+  }
+  width: 50px;
+  height: 50px;
+  background: #1b1b1b;
+  content: "";
+  position: fixed;
+  top: 10px;
+  right: 35px;
+  @include rata(column);
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 0 rgba($color: $dark, $alpha: 0.25);
+  z-index: 26;
+  @extend .trans;
+  &.active {
+    transform: scale(55);
+  }
+}
+
+.menu-mobile {
+  @include min(841px) {
+    display: none;
+  }
+  @extend .full-h;
+  @include rata(column);
+  align-items: flex-start;
+  display: none;
+  z-index: 27;
+  position: fixed;
+  top: 0;
+  .list {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0;
+    color: $pure;
+    .menu-drop {
+      font-weight: 400;
+      text-transform: capitalize;
+      padding: 10px;
+      @include rata(column);
+      a {
+        color: $pure;
+        font-size: 20px;
+        margin: 20px;
+      }
+    }
+
+    @keyframes slides {
+      0% {
+        transform: translateX(-10vw);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(10vw);
+      }
+    }
+
+    animation: ease 0.75s both;
+
+    @mixin transition {
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.2}s;
+        }
+      }
+    }
+
+    @include transition;
+  }
+  @include max(840px) {
+    &.active {
+      display: flex;
+      opacity: 1;
+      .list {
+        animation-name: slides;
+      }
+    }
+  }
+}
+
+.menu-btn {
+  @include min(841px) {
+    display: none;
+  }
+  width: 50px;
+  height: 50px;
+  @include rata(column);
+  transform: scale(0.65);
+  z-index: 27;
+  position: fixed;
+  top: 10px;
+  right: 35px;
+  & > div {
+    background: $pure;
+    width: 80%;
+    height: 4px;
+    border-radius: 5px;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  .bar1 {
+    transform: translateX(0);
+  }
+  .bar2 {
+    transform: translateX(0);
+  }
+
+  &.change {
+    .bar1 {
+      transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    .bar2 {
+      opacity: 0;
+    }
+    .bar3 {
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  top: 2em;
+  z-index: $nav;
+  background: transparent;
+  @extend .trans;
+  .grid {
+    @include rata(row);
+    justify-content: space-between;
+    @extend .trans;
+  }
+  a {
+    text-transform: uppercase;
+  }
+  .logo-brand h1 {
+    font-size: 24px;
+  }
+  .menu,
+  .list {
+    @include rata(row);
+  }
+  .list {
+    margin-left: 2vw;
+    position: relative;
+    height: 100%;
+    &::after {
+      @include after(0, 2px, $solid);
+      bottom: -10px;
+      opacity: 0;
+      @extend .trans;
+    }
+    &:hover,
+    &.active {
+      font-weight: 600;
+      &::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.active {
+    background: $pure;
+    box-shadow: 0 0 5px rgba($color: $solid, $alpha: 0.1);
+    top: 0;
+    .grid {
+      max-width: 100%;
+      padding: 0 2vw;
+    }
+  }
+
+  @include max(840px) {
+    background: $pure;
+    box-shadow: 0 0 5px rgba($color: $solid, $alpha: 0.1);
+    top: 0;
+    .menu {
+      display: none;
+    }
+  }
+}
+
+header {
+  .grid {
+    height: 100vh;
+    @include auto(425px, 2em);
+    align-items: center;
+  }
+  h1 {
+    font-weight: 900;
+    font-size: 49px;
+  }
+  p {
+    @include font(14px);
+    color: $light;
+  }
+}
+
+section {
+  padding: 4em 0;
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .card {
+    background: $pure;
+    padding: 1em 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 2em rgba($color: $solid, $alpha: 0.1);
+    width: 100%;
+  }
+
+  &#data {
+    .grid > p {
+      @include font(14px);
+      text-align: center;
+      margin: 2em;
+    }
+    .data {
+      @include auto(275px, 2em);
+      margin: 4em 0;
+      .card {
+        h2 {
+          float: right;
+        }
+        #active {
+          color: #f0ad4e;
+        }
+        #recovery {
+          color: #5cb85c;
+        }
+        #dead {
+          color: #d9534f;
+        }
+      }
+    }
+    .card {
+      overflow: hidden;
+      position: relative;
+      p {
+        font-weight: 500;
+      }
+      h2 {
+        font-size: 32px;
+        margin: 1.5em 0 0.5em 0;
+      }
+      &.total {
+        text-align: center;
+        margin-bottom: 4em;
+      }
+      &.region {
+        width: 100%;
+        overflow: auto;
+        min-height: 540px;
+        height: 60vh;
+        .table {
+          width: 100%;
+          min-width: 640px;
+        }
+        .row {
+          @include grid(3fr 1fr 1fr 1fr, 2em);
+          &:first-child {
+            font-size: 18px;
+            font-weight: 600;
+          }
+          p:not(:first-child) {
+            text-align: center;
+          }
+          &:not(:first-child) {
+            padding: 5px 0;
+            p {
+              color: $light;
+              font-weight: 500;
+            }
+            &:nth-child(odd) {
+              background: $bg;
+              border-radius: 10px;
+            }
+            p:first-child {
+              padding: 0 1em;
+            }
+          }
+        }
+      }
+      .iconic {
+        position: absolute;
+        bottom: 10px;
+        left: 1.5em;
+        font-size: 50px;
+        transform: scale(3);
+        opacity: 0.1;
+      }
+    }
+    a.info {
+      text-align: center;
+      display: block;
+      margin: 1em;
+    }
+    position: relative;
+    .floating {
+      z-index: -1;
+      position: absolute;
+      img {
+        width: auto;
+        height: 300px;
+      }
+      &:first-child {
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+      }
+      &:last-child {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &#information {
+    .grid > p {
+      @include font(14px);
+      text-align: center;
+      margin: 2em;
+    }
+    .step {
+      @include auto(230px, 2em);
+      margin: 4em auto;
+      width: 85%;
+    }
+    .card {
+      text-align: center;
+      padding-bottom: 2em;
+      p {
+        @include font(12px);
+        text-align: justify;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &#how {
+    .grid > p {
+      @include font(14px);
+      text-align: center;
+      margin: 2em;
+    }
+    .content {
+      @include auto(315px, 2em);
+      align-items: center;
+      margin: 4em auto;
+      width: 75%;
+      .iconic {
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      @include min(961px) {
+        &.right {
+          .iconic {
+            grid-area: 1 / 2 / 2 / 3;
+          }
+        }
+      }
+      p {
+        @include font(14px);
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 2em 1em 6em 1em;
+  background: $med;
+  color: $bg2;
+  font-size: 14px;
+  a {
+    color: $pure;
+    font-weight: 600;
+    @extend .trans;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}

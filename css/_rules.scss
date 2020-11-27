@@ -1,0 +1,89 @@
+@mixin rata($flow) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $flow;
+}
+
+@mixin split($fr,$gap) {
+    display: grid;
+    grid-template-columns: repeat($fr, 1fr);
+    grid-gap: $gap;
+}
+
+@mixin grid($fr, $gap) {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: $fr;
+}
+
+@mixin auto($lenght, $gap) {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: repeat(auto-fit, minmax($lenght, 1fr));
+}
+
+@mixin fill($lenght, $gap) {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: repeat(auto-fill, minmax($lenght, 1fr));
+}
+
+@mixin max($val) {
+    @media (max-width: $val) { @content; }
+}
+
+@mixin min($val) {
+    @media (min-width: $val) { @content; }
+}
+
+@mixin max-h($val) {
+    @media (max-height: $val) { @content; }
+}
+
+// Experimental
+@mixin font($size) {
+    font-size: $size;
+    line-height: $size*1.618;
+}
+
+@mixin grad($rot, $color1, $color2) {
+    background: $color1;
+    background: linear-gradient($rot, $color1 0%, $color2 100%);
+}
+
+@mixin after($width, $height, $bg) {
+    width: $width; height: $height; background: $bg;
+    content: ''; position: absolute;
+}
+
+@mixin before($width, $height, $bg) {
+    width: $width; height: $height; background: $bg;
+    content: ''; position: absolute;
+}
+
+@mixin solid($color, $pad) {
+    padding: $pad;
+    border: 1px solid $color;
+    background: $color; color: white;
+    border-radius: 10px; outline: none;
+    font-family: $font;
+    font-size: 14px; cursor: pointer;
+    &:hover {
+        background: #fff;
+        color: $color;
+    }
+}
+
+@mixin border($color, $pad) {
+    padding: $pad;
+    border: 1px solid $color;
+    background: #fff; color: $color;
+    border-radius: 10px; outline: none;
+    font-family: $font;
+    font-size: 14px; cursor: pointer;
+    &:hover {
+        background: $color;
+        color: white;
+    }
+}

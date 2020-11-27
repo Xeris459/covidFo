@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CovId-19 Data Center</title>
+
+    <!-- Web Resources -->
+	<script src="https://kit.fontawesome.com/0aa1f9181b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body id="home">
+    <div class="menu-mobile">
+        <a class="list" href="#home">Home</a>
+        <a class="list" href="#covid">Data CovId-19</a>
+        <a class="list" href="#information">Information</a>
+        <!-- <a class="list" href="#">News</a> -->
+    </div>
+    <div class="menu-btn" onclick="menu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="menu-bg"></div>
+    <nav>
+        <div class="grid">
+            <a class="logo-brand" href="#home"><h1>COVID-19 DataCenter</h1></a>
+            <div class="menu">
+                <a class="list" href="#home">Home</a>
+                <a class="list" href="#data">Data CovId-19</a>
+                <a class="list" href="#information">Information</a>
+                <!-- <a class="list" href="#">News</a> -->
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="grid">
+            <div class="iconic">
+                <img src="img/Virus Desinfection-pana.svg" alt="iconic-hero">
+            </div>
+            <div class="info">
+                <h1>Title Goes Here</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, distinctio impedit! Iste cum atque vel nihil, explicabo optio totam quibusdam temporibus dolor eos est doloremque? Repellendus consectetur aliquid in quod?</p>
+            </div>
+        </div>
+    </header>
+    
+    <section id="data">
+        <div class="floating" data-aos="fade-right" data-aos-offset="400">
+            <img src="img/virus-animate.svg" alt="">
+        </div>
+        <div class="grid">
+            <h1 data-aos="fade-up" data-aos-offset="100">Data Covid-19 di Indonesia</h1>
+            <p data-aos="fade-up" data-aos-offset="100" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quis nobis ad culpa, in, odio exercitationem ullam vel eligendi beatae voluptatum architecto quas est. Dolorum maiores aspernatur necessitatibus magnam consequatur!</p>
+            <div class="data">
+                <div class="card" data-aos="fade-up"  data-aos-offset="300">
+                    <p>Active</p>
+                    <h2 id="active">N/A</h2>
+                    <div class="iconic"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="card" data-aos="fade-up"  data-aos-offset="300">
+                    <p>Recovery</p>
+                    <h2 id="recovery">N/A</h2>
+                    <div class="iconic"><i class="fas fa-minus"></i></div>
+                </div>
+                <div class="card" data-aos="fade-up"  data-aos-offset="300">
+                    <p>Death</p>
+                    <h2 id="dead">N/A</h2>
+                    <div class="iconic"><i class="fas fa-skull-crossbones"></i></div>
+                </div>
+            </div>
+            <div class="card total" data-aos="zoom-in-left" data-aos-offset="100">
+                <p>Total Case</p>
+                <h2 id="total">N/A</h2>
+                <div class="iconic"><i class="fas fa-chart-line"></i> </div>
+            </div>
+            <div class="card region" data-aos="fade-up">
+                <div class="table">
+                    <div class="row">
+                        <p>Provinsi</p>
+                        <p>Active</p>
+                        <p>Recovery</p>
+                        <p>Death</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://covid19.keponet.com/api-help.php" class="info">API by https://covid19.keponet.com/</a>
+        </div>
+        <div class="floating" data-aos="fade-down" data-aos-offset="200">
+            <img src="img/virus-animate.svg" alt="">
+        </div>
+    </section>
+    <section id="information">
+        <div class="grid">
+            <h1 data-aos="fade-up" data-aos-offset="100">Bagaimana Covid-19 Menyebar</h1>
+            <p data-aos="fade-up" data-aos-offset="100" data-aos-delay="100">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo eveniet sapiente aliquam? Aspernatur asperiores placeat ut quibusdam accusantium perspiciatis commodi aliquam quaerat nihil, beatae consequuntur et assumenda magnam repellat ratione.</p>
+            <div class="step">
+                <div class="card" data-aos="fade-up"  data-aos-offset="300">
+                    <img src="img/Virus transmission-rafiki.svg" alt="">
+                    <h2>Dari Kontak Dengan Orang Yang Terinfeksi</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit modi praesentium porro autem quia numquam inventore possimus repellat sequi, aliquid, laudantium molestias sit expedita id placeat unde eius facilis?</p>
+                </div>
+                <div class="card" data-aos="fade-up"  data-aos-offset="300">
+                    <img src="img/Virus Desinfection-bro.svg" alt="">
+                    <h2>Droplet Orang Yang Terinfeksi</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit modi praesentium porro autem quia numquam inventore possimus repellat sequi, aliquid, laudantium molestias sit expedita id placeat unde eius facilis?</p>
+                </div>
+                <div class="card" data-aos="fade-up"  data-aos-offset="300">
+                    <img src="img/Person with medical mask-amico.svg" alt="">
+                    <h2>Dapat Menyebar Melalui Udara</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odit modi praesentium porro autem quia numquam inventore possimus repellat sequi, aliquid, laudantium molestias sit expedita id placeat unde eius facilis?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how">
+        <div class="grid">
+            <h1 data-aos="fade-up" data-aos-offset="100">Bagaimana Cara Melindungi Diri Sendiri</h1>
+            <p data-aos="fade-up" data-aos-offset="100" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, assumenda praesentium cupiditate nihil deserunt error consequuntur dolores vero enim dolorum quia fuga ipsum accusantium voluptatibus ipsam magni? Voluptates, est exercitationem?</p>
+            <div class="content">
+                <div class="iconic" data-aos="fade-right"><img src="img/Person with medical mask-amico.svg" alt=""></div>
+                <div class="info" data-aos="fade-up">
+                    <h2>Menggunakan Masker</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis sapiente ut rerum voluptate odio laudantium ab itaque nihil esse, repudiandae molestiae eaque, dolore a adipisci unde corrupti voluptates accusamus!</p>
+                </div>
+            </div>
+            
+            <div class="content right">
+                <div class="iconic" data-aos="fade-left"><img src="img/Handwashing-amico.svg" alt=""></div>
+                <div class="info" data-aos="fade-up">
+                    <h2>Mencuci Tangan</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis sapiente ut rerum voluptate odio laudantium ab itaque nihil esse, repudiandae molestiae eaque, dolore a adipisci unde corrupti voluptates accusamus!</p>
+                </div>
+            </div>
+            <div class="content" >
+                <div class="iconic" data-aos="fade-right"><img src="img/Person with a cold-pana.svg" alt=""></div>
+                <div class="info" data-aos="fade-up">
+                    <h2>Menutup Hidung dan Mulut Ketika Bersin</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis sapiente ut rerum voluptate odio laudantium ab itaque nihil esse, repudiandae molestiae eaque, dolore a adipisci unde corrupti voluptates accusamus!</p>
+                </div>
+            </div>
+            
+            <div class="content right">
+                <div class="iconic" data-aos="fade-left"><img src="img/Virus transmission-amico.svg" alt=""></div>
+                <div class="info" data-aos="fade-up">
+                    <h2>Menjaga Jarak</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quis sapiente ut rerum voluptate odio laudantium ab itaque nihil esse, repudiandae molestiae eaque, dolore a adipisci unde corrupti voluptates accusamus!</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        &copy; Copyright Covid-19 DataCenter 2020 | Design & Develop by <a target="_blank" href="https://github.com/softamv">Vikry Yanto</a>
+    </footer>
+    <!-- Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>

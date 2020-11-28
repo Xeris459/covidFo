@@ -53,19 +53,23 @@ $.ajax({
     }
 });
 
-$('.menu .list').on('click', function(e){
+$('.list').on('click', function(e){
     e.preventDefault();
-
     const go = $(this).attr('href');
 
     $('html, body').animate({
         scrollTop: $(`${go}`).offset().top
     }, 1000);
+
+    $('.menu-bg').removeClass('active');
+    $('.menu-mobile').removeClass('active');
+    $('.overlay-circle').removeClass('active');
+    $('.menu-btn').removeClass('change');
 })
+
 
 $('.logo-brand').on('click', function(e){
     e.preventDefault();
-
     const go = $(this).attr('href');
 
     $('html, body').animate({
